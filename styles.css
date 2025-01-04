@@ -1,0 +1,71 @@
+* {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+h1{
+    position: absolute;
+    top:10%;
+    font-size: 72px;;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.toilet {
+    height: auto;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+}
+
+.paada {
+    height: auto;
+    width: 15%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translate(-50%, -40%) rotate(0deg);
+    }
+    50% {
+        transform: translate(-50%, -90%) rotate(360deg);
+    }
+    100% {
+        transform: translate(-50%, -40%) rotate(720deg);
+    }
+}
+
+.toilet:hover + .paada {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    animation: moveUpDown 2.5s linear infinite;
+    transition: all 0.3s ease;
+}
+
+.toilet:active + .paada {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    animation: moveUpDown 2.5s linear infinite;
+    transition: all 0.3s ease;
+}
